@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class ExerciseList extends Component {
+export default class UploadID extends Component {
   render() {
     return(
       <div>

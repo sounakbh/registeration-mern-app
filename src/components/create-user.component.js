@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
+import UserDetails from './userDetails.component.js';
+import TicketsPage from './tickets.component.js';
+import ConfirmPage from './confirm.component.js';
+import SuccessPage from './success.component.js';
 import axios from 'axios';
 
 export default class CreateUser extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      firstName: '',
-      lastName: '',
-      mobile: 0,
-      email: '',
-      regType: '',
-      numTickets: 0
-    }
+  state = {
+    step: 1,
+    firstName: '',
+    lastName: '',
+    mobile: 0,
+    email: '',
+    regType: '',
+    numTickets: 0
   }
+  nextStep = () => {
+    const { step } = this.state;
+    this.setState({
+      step: step + 1
+    });
+  };
+
+  // Go back to prev step
+  prevStep = () => {
+    const { step } = this.state;
+    this.setState({
+      step: step - 1
+    });
+  };
   handleChange = input => e => {
     this.setState({[input]: e.target.value});
   }
@@ -34,71 +50,39 @@ export default class CreateUser extends Component {
   }
 
   render() {
-    return(
-      <div>
-      <h3>Create New Exercise Log</h3>
-      <form onSubmit={this.onSubmit}>
-        <div className="form-group">
-          <label>firstName </label>
-          <input  type="text"
-              required
-              className="form-control"
-              value={this.state.firstName}
-              onChange={this.handleChange('firstName')}
-              />
-        </div>
-        <div className="form-group">
-          <label>lastName </label>
-          <input  type="text"
-              required
-              className="form-control"
-              value={this.state.lastName}
-              onChange={this.handleChange('lastName')}
-              />
-        </div>
-        <div className="form-group">
-          <label>Mobile </label>
-          <input  type="text"
-              required
-              className="form-control"
-              value={this.state.mobile}
-              onChange={this.handleChange('mobile')}
-              />
-        </div>
-        <div className="form-group">
-          <label>Email </label>
-          <input  type="text"
-              required
-              className="form-control"
-              value={this.state.email}
-              onChange={this.handleChange('email')}
-              />
-        </div>
-        <div className="form-group">
-          <label>Registration Type </label>
-          <input  type="text"
-              required
-              className="form-control"
-              value={this.state.regType}
-              onChange={this.handleChange('regType')}
-              />
-        </div>
-        <div className="form-group">
-          <label>Num of Tickets </label>
-          <input  type="text"
-              required
-              className="form-control"
-              value={this.state.numTickets}
-              onChange={this.handleChange('numTickets')}
-              />
-        </div>
-
-
-        <div className="form-group">
-          <input type="submit" value="Create Exercise Log" className="btn btn-primary" />
-        </div>
-      </form>
-    </div>
-    )
+    const { step } = this.state;
+    const { firstName, lastName, mobile, email, regType, numTickets } = this.state;
+    const values = { firstName, lastName, mobile, email, regType, numTickets };
+    switch (step) {
+      case 1:
+        return (
+          <UserDetails
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+      case 2:
+        return (
+          <TicketsPage
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+      case 3:
+        return (
+          <ConfirmPage
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+          />
+        );
+      case 4:
+        return <SuccessPage />;
+      default:
+        (console.log('This is a multi-step form built with React.'))
+    }
   }
 }
