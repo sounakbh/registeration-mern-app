@@ -11,8 +11,8 @@ export default class CreateUser extends Component {
     lastName: '',
     mobile: 0,
     email: '',
-    regType: '',
-    numTickets: 0
+    regType: 'Self',
+    numTickets: 1
   }
   nextStep = () => {
     const { step } = this.state;

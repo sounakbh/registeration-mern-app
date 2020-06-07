@@ -4,10 +4,10 @@ nav {
   height: 85px;
 }
 .navbar-brand {
-  padding-left: 5%;
+  margin-left: 5%;
 }
 .ml-auto {
-  padding-right: 4%;
+  margin-right: 5%;
 }
 .nav-link, .navbar-brand {
   color: black;

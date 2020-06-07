@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {Button} from 'react-bootstrap';
-import './userDetails.css';
+import {Button, ProgressBar} from 'react-bootstrap';
+import './css/userDetails.css';
 
 export default class UserDetails extends Component {
   continue = e => {
@@ -9,10 +9,12 @@ export default class UserDetails extends Component {
   };
 
   render() {
-    const { values, handleChange } = this.props;
+    const { handleChange } = this.props;
     return(
       <div className="container">
         <div className="form-group">
+          <ProgressBar now={33} label={"33%"}/>
+          <br/>
           <input  type="text"
               placeholder="First Name"
               required
@@ -44,7 +46,7 @@ export default class UserDetails extends Component {
               onChange={handleChange('email')}
               />
         </div>
-        <div class="btnspace">
+        <div className="btnspace">
           <Button variant="primary"
                 onClick={this.continue}
               >Continue

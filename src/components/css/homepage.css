@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+.container {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.homepageHeading {
+  font-size: 50px;
+}
+
+.description {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}

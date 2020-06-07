@@ -3,7 +3,7 @@ import {Bar} from 'react-chartjs-2'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChartBar } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios';
-import './fetchUsers.css';
+import './css/fetchUsers.css';
 
 export default class FetchUsers extends Component {
   state = {
@@ -13,13 +13,13 @@ export default class FetchUsers extends Component {
   makeDataArray() {
     const a = [0, 0, 0, 0]
     this.state.users.map(currentUser => {
-      if(currentUser.regType == "Self")
+      if(currentUser.regType === "Self")
         a[0] += currentUser.numTickets
-      else if(currentUser.regType == "Group")
+      else if(currentUser.regType === "Group")
         a[1] += currentUser.numTickets
-      else if(currentUser.regType == "Corporate")
+      else if(currentUser.regType === "Corporate")
         a[2] += currentUser.numTickets
-      else if(currentUser.regType == "Others")
+      else if(currentUser.regType === "Others")
         a[3] += currentUser.numTickets
     })
     return a

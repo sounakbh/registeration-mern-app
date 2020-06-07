@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button, Form} from 'react-bootstrap';
+import {Button, Form, ProgressBar} from 'react-bootstrap';
 
 export default class TicketsPage extends Component {
   continue = e => {
@@ -16,8 +16,9 @@ export default class TicketsPage extends Component {
     return(
         <div className="container">
         <div className="form-group">
-          <Form.Control placeholder="Registration Type" defaultValue={values.regType} onChange={handleChange('regType')} as="select">
-            <option selected disabled value="Registration Type">Registration Type</option>
+          <ProgressBar now={66} label={"66%"}/>
+          <br/>
+          <Form.Control placeholder="Registration Type" onChange={handleChange('regType')} as="select">
             <option value="Self">Self</option>
             <option value="Group">Group</option>
             <option value="Corporate">Corporate</option>
@@ -30,6 +31,7 @@ export default class TicketsPage extends Component {
               required
               className="form-control"
               placeholder="Number of Tickets"
+              value={values.numTickets}
               onChange={handleChange('numTickets')}
               />
         </div>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {Button, Form} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLock } from '@fortawesome/free-solid-svg-icons'
 
 export default class Authenticate extends Component {
   state = {
@@ -10,7 +12,7 @@ export default class Authenticate extends Component {
     this.setState({[input]: e.target.value});
   }
   login = () => {
-    if(this.state.password == "notaPassword" && this.state.username == "sounakbh@gmail.com") {
+    if(this.state.password === "notaPassword" && this.state.username === "sounakbh@gmail.com") {
         window.location = '/stats';
     }
     else {
@@ -20,7 +22,7 @@ export default class Authenticate extends Component {
   render() {
     return(
         <div className="container">
-
+        <div className="heading" style={{marginBottom: "5%"}}><FontAwesomeIcon style={{color:"#808080"}} icon={faLock} /> &nbsp;Admin</div>
         <div className="form-group">
           <input  type="text"
               required
