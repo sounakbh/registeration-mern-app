@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Button, ProgressBar} from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDatabase } from '@fortawesome/free-solid-svg-icons'
 import './css/confirm.css'
 import axios from 'axios';
 
@@ -44,11 +46,9 @@ export default class ConfirmPage extends Component {
     return(
       <div className="container">
         <div className="form-group">
-
+          <div style={{textAlign: "center"}} className="homepageHeading">CloveMeet <span style={{color: "#228B22"}}>2.0</span></div><br/>
           <ProgressBar variant="success" now={100} label={"100%"}/>
           <br/>
-
-          <h1 className="heading" style={{marginTop: "5%"}}>Confirm your Details</h1>
           <div className="detail">First Name : {firstName}</div>
           <div className="detail">Last Name : {lastName}</div>
           <div className="detail">Mobile : {mobile}</div>

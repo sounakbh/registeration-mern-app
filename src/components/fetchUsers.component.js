@@ -59,7 +59,7 @@ export default class FetchUsers extends Component {
 
     return(
       <div className="body container">
-        <div className="heading"><FontAwesomeIcon icon={faChartBar} /> &nbsp;Statistics</div>
+        <div className="heading"><FontAwesomeIcon style={{color:"#228B22"}} icon={faChartBar} /> &nbsp;Statistics</div>
         <div className="subHeading">Registrations Category-wise</div>
 
         <Bar

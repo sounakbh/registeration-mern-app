@@ -16,6 +16,7 @@ export default class UserDetails extends Component {
       <div className="container">
         {/*Taking input of firstname, lastName, mobile, and email and updating the state of the parent component*/}
         <div className="form-group">
+          <div style={{textAlign: "center"}} className="homepageHeading">CloveMeet <span style={{color: "#228B22"}}>2.0</span></div><br/>
           <ProgressBar now={33} variant="success" label={"33%"}/>
           <br/>
           <input

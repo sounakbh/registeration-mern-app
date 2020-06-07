@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faLeaf } from '@fortawesome/free-solid-svg-icons'
 import './css/navbar.css';
 
-export default class Navbar extends Component {
+export default class MainNavbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg shadow p-3 mb-5 bg-white rounded">

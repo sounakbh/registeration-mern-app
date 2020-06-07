@@ -20,7 +20,8 @@ export default class TicketsPage extends Component {
       <div className="container">
 
         <div className="form-group">
-          <ProgressBar now={66} label={"66%"}/>
+          <div style={{textAlign: "center"}} className="homepageHeading">CloveMeet <span style={{color: "#228B22"}}>2.0</span></div><br/>
+          <ProgressBar variant="success" now={66} label={"66%"}/>
           <br/>
 
           <Form.Control placeholder="Registration Type" onChange={handleChange('regType')} as="select">
