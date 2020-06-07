@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
+import {Button} from 'react-bootstrap';
+import './confirm.css'
 import axios from 'axios';
 
 export default class ConfirmPage extends Component {
   continue = e => {
     e.preventDefault();
     // PROCESS FORM //
+    const {firstName, lastName, mobile, email, regType, numTickets} = this.props.values;
     const user = {
-      firstName: this.props.values.firstName,
-      lastName: this.props.values.lastName,
-      mobile: this.props.values.mobile,
-      email: this.props.values.email,
-      regType: this.props.values.regType,
-      numTickets: this.props.values.numTickets
+      firstName,
+      lastName,
+      mobile,
+      email,
+      regType,
+      numTickets
     }
     console.log(user);
     axios.post('http://localhost:5000/users/add', user)
@@ -28,25 +31,22 @@ export default class ConfirmPage extends Component {
       values: { firstName, lastName, mobile, email, regType, numTickets }
     } = this.props;
     return(
-      <div>
-        <h1>Confirmation Page</h1>
-        <div>First Name : {firstName}</div>
-        <div>Last Name : {lastName}</div>
-        <div>Mobile : {mobile}</div>
-        <div>Email : {email}</div>
-        <div>Registration : {regType}</div>
-        <div>Number of Tickets : {numTickets}</div>
-        <button
-              color="secondary"
-              variant="contained"
-              onClick={this.back}
-            >Back</button>
-
-        <button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Confirm & Continue</button>
+      <div className="container">
+        <h1 className="heading">Confirmation Page</h1>
+        <div className="detail">First Name : {firstName}</div>
+        <div className="detail">Last Name : {lastName}</div>
+        <div className="detail">Mobile : {mobile}</div>
+        <div className="detail">Email : {email}</div>
+        <div className="detail">Registration : {regType}</div>
+        <div className="detail">Number of Tickets : {numTickets}</div>
+        <div className="btnspace">
+          <Button variant="danger"
+                onClick={this.back}
+              >Back</Button> &nbsp;
+          <Button variant="primary"
+                onClick={this.continue}
+              >Confirm</Button>
+        </div>
       </div>
     )
   }

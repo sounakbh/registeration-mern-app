@@ -3,7 +3,6 @@ import UserDetails from './userDetails.component.js';
 import TicketsPage from './tickets.component.js';
 import ConfirmPage from './confirm.component.js';
 import SuccessPage from './success.component.js';
-import axios from 'axios';
 
 export default class CreateUser extends Component {
   state = {
@@ -29,24 +28,9 @@ export default class CreateUser extends Component {
       step: step - 1
     });
   };
+
   handleChange = input => e => {
     this.setState({[input]: e.target.value});
-  }
-
-  onSubmit = e => {
-    e.preventDefault();
-    const user = {
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      mobile: this.state.mobile,
-      email: this.state.email,
-      regType: this.state.regType,
-      numTickets: this.state.numTickets
-    }
-    console.log(user);
-    axios.post('http://localhost:5000/users/add', user)
-    .then(res => console.log(res.data))
-    .then(window.location = '/');
   }
 
   render() {

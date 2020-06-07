@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Button} from 'react-bootstrap';
+import './userDetails.css';
 
 export default class UserDetails extends Component {
   continue = e => {
@@ -9,48 +11,45 @@ export default class UserDetails extends Component {
   render() {
     const { values, handleChange } = this.props;
     return(
-      <div>
+      <div className="container">
         <div className="form-group">
-          <label>firstName </label>
           <input  type="text"
+              placeholder="First Name"
               required
               className="form-control"
-              value={values.firstName}
               onChange={handleChange('firstName')}
               />
         </div>
         <div className="form-group">
-          <label>lastName </label>
           <input  type="text"
               required
               className="form-control"
-              value={values.lastName}
+              placeholder="Last Name"
               onChange={handleChange('lastName')}
               />
         </div>
         <div className="form-group">
-          <label>Mobile </label>
           <input  type="text"
               required
               className="form-control"
-              value={values.mobile}
+              placeholder="Phone No."
               onChange={handleChange('mobile')}
               />
         </div>
         <div className="form-group">
-          <label>Email </label>
           <input  type="text"
               required
               className="form-control"
-              value={values.email}
+              placeholder="E-mail"
               onChange={handleChange('email')}
               />
         </div>
-        <button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Continue</button>
+        <div class="btnspace">
+          <Button variant="primary"
+                onClick={this.continue}
+              >Continue
+          </Button>
+        </div>
       </div>
 
     )

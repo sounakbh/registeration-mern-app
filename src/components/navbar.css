@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+nav {
+  font-family: 'Ubuntu', sans-serif;
+  height: 85px;
+}
+.navbar-brand {
+  padding-left: 5%;
+}
+.ml-auto {
+  padding-right: 4%;
+}
+.nav-link, .navbar-brand {
+  color: black;
+}
+.navbar-left {
+  float: right;
+}
+
+Link {
+  color: black;
+}

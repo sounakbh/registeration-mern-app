@@ -2,18 +2,20 @@ import React from 'react';
 import { BrowserRouter as Router, Route} from "react-router-dom";
 
 import Navbar from "./components/navbar.component"
-import ExercisesList from "./components/exercises-list.component";
-import CreateUser from "./components/create-user.component";
+import FetchUsers from "./components/fetchUsers.component";
+import CreateUser from "./components/createUser.component";
 import HomePage from "./components/homepage.component";
+import Authenticate from "./components/auth.component";
 
 function App() {
   return (
     <Router>
-      <div className="container">
+      <div>
         <Navbar />
         <br/>
         <Route path="/" exact component={HomePage} />
-        <Route path="/stats" exact component={ExercisesList} />
+        <Route path="/auth" exact component={Authenticate} />
+        <Route path="/stats" exact component={FetchUsers} />
         <Route path="/user" component={CreateUser} />
       </div>
     </Router>

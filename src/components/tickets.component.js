@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Button, Form} from 'react-bootstrap';
 
 export default class TicketsPage extends Component {
   continue = e => {
@@ -13,35 +14,33 @@ export default class TicketsPage extends Component {
   render() {
     const { values, handleChange } = this.props;
     return(
-        <div>
+        <div className="container">
         <div className="form-group">
-          <label>Registration Type </label>
-          <input  type="text"
-              required
-              className="form-control"
-              value={values.regType}
-              onChange={handleChange('regType')}
-              />
+          <Form.Control placeholder="Registration Type" defaultValue={values.regType} onChange={handleChange('regType')} as="select">
+            <option selected disabled value="Registration Type">Registration Type</option>
+            <option value="Self">Self</option>
+            <option value="Group">Group</option>
+            <option value="Corporate">Corporate</option>
+            <option value="Others">Others</option>
+          </Form.Control>
         </div>
+
         <div className="form-group">
-          <label>Num of Tickets </label>
           <input  type="text"
               required
               className="form-control"
-              value={values.numTickets}
+              placeholder="Number of Tickets"
               onChange={handleChange('numTickets')}
               />
         </div>
-        <button
-              color="secondary"
-              variant="contained"
-              onClick={this.back}
-            >Back</button>
-        <button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Continue</button>
+        <div className="btnspace">
+          <Button variant="danger"
+                onClick={this.back}
+              >Back</Button> &nbsp;
+          <Button variant="primary"
+                onClick={this.continue}
+              >Continue</Button>
+        </div>
       </div>
 
     )

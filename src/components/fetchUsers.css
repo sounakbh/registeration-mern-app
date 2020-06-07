@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+.body {
+  font-family: 'Ubuntu', sans-serif;
+}
+.heading {
+  text-align: center;
+  font-size: 40px;
+}
+
+.subHeading {
+  text-align: center;
+  font-size: 25px;
+  margin: 20px;
+}
+
+.displayChart {
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
