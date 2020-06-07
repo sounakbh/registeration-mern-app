@@ -1,17 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
 nav {
   font-family: 'Ubuntu', sans-serif;
   height: 85px;
 }
+
 .navbar-brand {
   margin-left: 5%;
 }
+
 .ml-auto {
   margin-right: 5%;
 }
+
 .nav-link, .navbar-brand {
   color: black;
 }
+
 .navbar-left {
   float: right;
 }

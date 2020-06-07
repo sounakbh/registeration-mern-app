@@ -12,7 +12,6 @@ function App() {
     <Router>
       <div>
         <Navbar />
-        <br/>
         <Route path="/" exact component={HomePage} />
         <Route path="/auth" exact component={Authenticate} />
         <Route path="/stats" exact component={FetchUsers} />
